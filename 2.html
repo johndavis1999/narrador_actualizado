@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Narrador 2</title>
+</head>
+<body>
+    <div class="container" aria-label="prueba">
+        <h1>texto de prueba</h1>
+    </div>
+    <div class="texto">
+        <h1>texto de prueba</h1>
+    </div>
+    <div class="container">
+        <h1 class="texto">Título de prueba</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <img src="computadora.avif" alt="Descripción de la imagen 1">
+                <p class="texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tincidunt tristique felis at tristique. Mauris congue elit sit amet risus aliquam, vitae tempus mauris posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec varius ex eget interdum aliquet. Sed condimentum purus in sapien tempus tempus. Fusce eu ante sit amet ligula placerat sodales id et elit. Phasellus non suscipit lectus, non dapibus leo. Aliquam erat volutpat. Quisque nec dapibus ex, id lobortis velit. Proin scelerisque, risus sed faucibus fringilla, odio est laoreet velit, in consectetur tortor metus at sem.</p>
+            </div>
+            <div class="col-md-6">
+                <div aria-label="Descripción de la sección 1">
+                    <img src="paisaje1.jpg" alt="Descripción de la imagen 2">
+                    <p class="texto">Vestibulum nec ex condimentum, aliquet velit id, hendrerit dui. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed eget elementum dui. Nullam non pulvinar est. Aenean sed facilisis dui. Curabitur feugiat facilisis sem non tristique. Sed faucibus, urna vitae feugiat vestibulum, diam orci fringilla nulla, id ultrices arcu mi in lorem.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div aria-label="Descripción de la sección 2">
+                    <img src="paisaje2.jpg" alt="Descripción de la imagen 3">
+                    <p class="texto">Fusce rhoncus nisl in massa sagittis tincidunt. In sed metus sed justo consectetur mattis. Suspendisse tristique rutrum nisl id porttitor. Aenean eu est ac mauris tristique bibendum. Nulla laoreet, tellus at condimentum dapibus, sem urna fringilla purus, et dapibus nunc lacus vitae odio. Donec vulputate consectetur massa, a elementum nisl congue sit amet.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <img src="auto.jpeg" alt="Descripción de la imagen 4">
+                <p class="texto">Cras eget sem neque. Etiam et lacus nisl. In facilisis, neque vitae euismod rutrum, eros orci scelerisque leo, ut convallis arcu libero vel libero. In dignissim elit nec sapien fermentum consectetur. Morbi faucibus consequat metus, a condimentum felis iaculis eu. Curabitur ut augue nisi. Praesent posuere mauris sed lobortis gravida.</p>
+            </div>
+        </div>
+    </div>
+    
+    
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script>/*
+        const textos = document.querySelectorAll('.texto');
+        const imagenes = document.querySelectorAll('img[alt]');
+        const elementosAriaLabel = document.querySelectorAll('[aria-label]');
+
+        let ultimoElementoNarrado = null;
+
+        function decir(texto) {
+            var mensaje = new SpeechSynthesisUtterance(texto);
+            mensaje.onend = function() {
+                console.log('Terminó de reproducir');
+            };
+            speechSynthesis.speak(mensaje);
+        }
+
+        function detener() {
+            speechSynthesis.cancel();
+        }
+
+        function iniciarNarrador(elemento) {
+            if (elemento.innerText) {
+                decir(elemento.innerText);
+            } else if (elemento.alt) {
+                decir(elemento.alt);
+            } else if (elemento.getAttribute('aria-label')) {
+                decir(elemento.getAttribute('aria-label'));
+            }
+            ultimoElementoNarrado = elemento;
+        }
+
+        function detenerNarrador() {
+            detener();
+            ultimoElementoNarrado = null;
+        }
+
+        function esMismoElemento(elemento) {
+            return ultimoElementoNarrado === elemento;
+        }
+
+        textos.forEach((texto) => {
+            texto.addEventListener('mouseover', function() {
+                if (!esMismoElemento(texto)) {
+                    iniciarNarrador(texto);
+                }
+            });
+            texto.addEventListener('mouseout', function() {
+                detenerNarrador();
+            });
+        });
+
+        imagenes.forEach((imagen) => {
+            imagen.addEventListener('mouseover', function() {
+                if (!esMismoElemento(imagen)) {
+                    iniciarNarrador(imagen);
+                }
+            });
+            imagen.addEventListener('mouseout', function() {
+                detenerNarrador();
+            });
+        });
+
+        elementosAriaLabel.forEach((elemento) => {
+            elemento.addEventListener('mouseover', function() {
+                if (!esMismoElemento(elemento)) {
+                    iniciarNarrador(elemento);
+                }
+            });
+            elemento.addEventListener('mouseout', function() {
+                detenerNarrador();
+            });
+        });*/
+    </script>
+
+    <script>
+        const textos = document.querySelectorAll('.texto');
+        const imagenes = document.querySelectorAll('img[alt]');
+        const elementosAriaLabel = document.querySelectorAll('[aria-label]');
+
+        let ultimoElementoNarrado = null;
+
+        function decir(texto) {
+            var mensaje = new SpeechSynthesisUtterance(texto);
+            mensaje.onend = function() {
+                console.log('Terminó de reproducir');
+            };
+            speechSynthesis.speak(mensaje);
+        }
+
+        function detener() {
+            speechSynthesis.cancel();
+        }
+
+        function iniciarNarrador(elemento) {
+            if (elemento.getAttribute('aria-label')) {
+                decir(elemento.getAttribute('aria-label'));
+                ultimoElementoNarrado = elemento.getAttribute('aria-label');
+            } else {
+                if (elemento.innerText) {
+                decir(elemento.innerText);
+                ultimoElementoNarrado = elemento.innerText;
+                } else if (elemento.alt) {
+                decir(elemento.alt);
+                ultimoElementoNarrado = elemento.alt;
+                }
+            }
+        }
+
+
+        function detenerNarrador() {
+            detener();
+            ultimoElementoNarrado = null;
+        }
+
+        function esMismoElemento(elemento) {
+  if (ultimoElementoNarrado) {
+    const textoNarrado = ultimoElementoNarrado.innerText;
+    const altNarrado = ultimoElementoNarrado.getAttribute('alt');
+    const ariaLabelNarrado = ultimoElementoNarrado.getAttribute('aria-label');
+
+    if (
+      textoNarrado &&
+      textoNarrado === elemento.innerText
+    ) {
+      return true;
+    }
+
+    if (
+      altNarrado &&
+      altNarrado === elemento.getAttribute('alt')
+    ) {
+      return true;
+    }
+
+    if (
+      ariaLabelNarrado &&
+      ariaLabelNarrado === elemento.getAttribute('aria-label')
+    ) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
+
+        textos.forEach((texto) => {
+            texto.addEventListener('mouseover', function() {
+                if (!esMismoElemento(texto)) {
+                    iniciarNarrador(texto);
+                }
+            });
+            texto.addEventListener('mouseout', function() {
+                detenerNarrador();
+            });
+        });
+
+        imagenes.forEach((imagen) => {
+            imagen.addEventListener('mouseover', function() {
+                if (!esMismoElemento(imagen)) {
+                    iniciarNarrador(imagen);
+                }
+            });
+            imagen.addEventListener('mouseout', function() {
+                detenerNarrador();
+            });
+        });
+
+        elementosAriaLabel.forEach((elemento) => {
+            elemento.addEventListener('mouseover', function() {
+                if (!esMismoElemento(elemento)) {
+                    iniciarNarrador(elemento);
+                }
+            });
+            elemento.addEventListener('mouseout', function() {
+                detenerNarrador();
+            });
+        });
+    </script>
+</body>
+</html>
